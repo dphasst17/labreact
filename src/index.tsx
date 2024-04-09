@@ -6,14 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './routes/Routes';
 import { NextUIProvider } from '@nextui-org/react';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <NextUIProvider>
-      <RouterProvider router={router}/>
-    </NextUIProvider>
+    <Provider store={store}>
+      <NextUIProvider>
+        <RouterProvider router={router}/>
+      </NextUIProvider>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -2,6 +2,7 @@
 import React from "react";
 import Geolocation from "../../interfaces/geolocation";
 import './Bai05.css'
+import { Image } from "@nextui-org/react";
 
 const SeasonConfig = {
     summer:{
@@ -25,7 +26,7 @@ const OptionToConfig:React.FC<Geolocation> = ({latitude, error} )=>{
             const{text, iconName, color} = SeasonConfig[season];
                return <>
                <div className="bai5">
-                    <img className="shadow-lg shadow-gray-500/50 " src={iconName} alt="" />
+                    <Image src={iconName} alt=""  width={200} radius="sm" isBlurred isZoomed/>
                     <h2 className={color}>{text}</h2>
                </div>
                </>
